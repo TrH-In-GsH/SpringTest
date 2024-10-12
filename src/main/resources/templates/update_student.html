@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+</head>
+<body>
+    <h2>Edit Student</h2>
+    <form th:action="@{/students/saveStudent}" th:object="${student}" method="post">
+        Student ID: <input type="text" th:field="*{studentID}" readonly><br>
+        Batch: <input type="text" th:field="*{batch}"><br>
+        Name: <input type="text" th:field="*{name}"><br>
+        Gender: 
+        <input type="radio" th:field="*{gender}" value="1"> Male
+        <input type="radio" th:field="*{gender}" value="0"> Female<br>
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>

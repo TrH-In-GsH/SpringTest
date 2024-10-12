@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Student</title>
+</head>
+<body>
+    <h2>Add New Student</h2>
+    <form action="/students/saveStudent" method="post">
+        Student ID: <input type="text" name="studentID"><br>
+        Batch: <input type="text" name="batch"><br>
+        Name: <input type="text" name="name"><br>
+        Gender: 
+        <input type="radio" name="gender" value="1"> Male
+        <input type="radio" name="gender" value="0"> Female<br>
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+</head>
+<body>
+    <h1>Student Management</h1>
+    <a href="/students/showNewStudentForm">Add New Student</a>
+    <table border="1">
+        <tr>
+            <th>Student ID</th>
+            <th>Batch</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="student : ${listStudents}">
+            <td th:text="${student.studentID}"></td>
+            <td th:text="${student.batch}"></td>
+            <td th:text="${student.name}"></td>
+            <td><input type="radio" th:checked="${student.gender == 1}" disabled> Male
+                <input type="radio" th:checked="${student.gender == 0}" disabled> Female
+            </td>
+            <td>
+                <a th:href="@{/students/showFormForUpdate/{id}(id=${student.studentID})}">Edit</a> | 
+                <a th:href="@{/students/deleteStudent/{id}(id=${student.studentID})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
